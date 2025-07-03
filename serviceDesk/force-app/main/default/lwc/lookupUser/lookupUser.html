@@ -1,0 +1,20 @@
+<template>
+    <lightning-input
+        type="search"
+        label="Responsável"
+        value={searchTerm}
+        onchange={handleSearch}>
+    </lightning-input>
+
+    <template if:true={results.length}>
+        <ul class="slds-box slds-m-top_x-small">
+            <template for:each={results} for:item="user">
+                <li key={user.Id} class="slds-p-around_x-small slds-border_bottom">
+                    <a href="javascript:void(0);" onclick={handleSelect} data-id={user.Id} data-name={user.Name}>
+                        {user.Name}
+                    </a>
+                </li>
+            </template>
+        </ul>
+    </template>
+</template>

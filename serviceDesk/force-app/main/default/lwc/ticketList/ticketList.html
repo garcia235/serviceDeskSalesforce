@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Chamados">
+        <div class="slds-p-around_medium">
+            <lightning-combobox label="Filtrar por Status" value={statusFilter} options={statusOptions} onchange={handleStatusChange}></lightning-combobox>
+            <lightning-combobox label="Filtrar por Prioridade" value={priorityFilter} options={priorityOptions} onchange={handlePriorityChange}></lightning-combobox>
+        </div>
+
+        <lightning-datatable
+            key-field="Id"
+            data={tickets}
+            columns={columns}
+            sorted-by={sortedBy}
+            sorted-direction={sortDirection}
+            onsort={handleSort}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
