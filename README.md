@@ -27,25 +27,22 @@ Este projeto é um sistema de abertura, visualização e acompanhamento de chama
 
 A estrutura segue os princípios da **Clean Architecture**, dividida em camadas bem definidas:
 
+```
 ticket/
-├── application/                # Camada de aplicação (casos de uso)
-│   ├── commands/               # DTOs e estruturas de entrada
-│   └── usecases/              # Casos de uso (coordenam os fluxos)
-│
-├── domain/                    # Camada de domínio (lógica pura)
-│   ├── model/                 # Entidades centrais do negócio (ex: Ticket.cls)
-│   ├── interfaces/            # Contratos abstratos (ex: ITicketRepository)
-│   └── service/               # Lógica de domínio e regras de negócio
-│
-├── infra/                     # Camada de infraestrutura
-│   └── repository/            # Implementações concretas (SOQL, DML)
-│
-├── trigger-handlers/          # Orquestração de triggers com controle de fluxo
-│
-├── helper/                    # Regras auxiliares e validações (before/after)
-│
+├── application/           # Camada de aplicação (casos de uso)
+│   ├── commands/          # DTOs e estruturas de entrada
+│   └── usecases/          # Casos de uso (coordenam os fluxos)
+├── domain/                # Camada de domínio (lógica pura)
+│   ├── model/             # Entidades centrais do negócio (ex: Ticket.cls)
+│   ├── interfaces/        # Contratos abstratos (ex: ITicketRepository)
+│   └── service/           # Lógica de domínio e regras de negócio
+├── infra/                 # Camada de infraestrutura
+│   └── repository/        # Implementações concretas (SOQL, DML)
+├── trigger-handlers/      # Orquestração de triggers com controle de fluxo
+├── helper/                # Regras auxiliares e validações (before/after)
 └── utils/
-    └── TriggerHandler.cls     # Classe utilitária reutilizável para padrão de trigger
+    └── TriggerHandler.cls # Classe utilitária reutilizável para padrão de trigger
+```
 
 ---
 
